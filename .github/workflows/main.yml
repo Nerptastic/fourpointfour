@@ -18,3 +18,20 @@ jobs:
 
     - name: Build
       run: npm run build
+      
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: executing remote ssh commands to deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          cd fourpointfour
+          git pull origin master
+          npm install
+          npm run build
+          pm2 restart server
