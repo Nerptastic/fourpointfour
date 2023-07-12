@@ -1,6 +1,6 @@
 # fourpointfour
 
-Typing Practice Application
+Typing Practice Application For Personal Use
 
 # Getting Started with Create React App
 
