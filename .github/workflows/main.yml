@@ -29,6 +29,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
+        debug: true
         script: |
           cd fourpointfour
           git pull origin main
